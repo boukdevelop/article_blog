@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestionnaire d'Articles</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <h1 class="logo">📝 Articles</h1>
+      
+      <div class="header-controls">
+        <!-- Recherche par catégorie -->
+        <select id="categoryFilter" class="filter-select">
+          <option value="">Toutes les catégories</option>
+          <option value="Tech">Tech</option>
+          <option value="Lifestyle">Lifestyle</option>
+          <option value="Voyage">Voyage</option>
+          <option value="Santé">Santé</option>
+          <option value="Autre">Autre</option>
+        </select>
+
+        <!-- Bouton Dark Mode -->
+        <button id="themeToggle" class="theme-btn" title="Mode sombre/clair">
+          🌙
+        </button>
+
+        <!-- Bouton Ajouter Article -->
+        <button id="addBtn" class="btn-add">+ Ajouter Article</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Articles Grid -->
+    <section id="articlesContainer" class="articles-grid">
+      <!-- Les articles s'affichent ici -->
+    </section>
+
+    <!-- Message vide -->
+    <div id="emptyMessage" class="empty-message" style="display: none;">
+      <p>Aucun article trouvé. Ajoutez votre premier article!</p>
+    </div>
+  </main>
+
+  <!-- Modal Ajouter/Modifier Article -->
+  <div id="modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span id="closeBtn" class="close">&times;</span>
+      <h2 id="modalTitle">Ajouter un Article</h2>
+
+      <form id="articleForm">
+        <!-- Titre -->
+        <div class="form-group">
+          <label for="title">Titre *</label>
+          <input type="text" id="title" placeholder="Titre de l'article" required>
+        </div>
+
+        <!-- Contenu -->
+        <div class="form-group">
+          <label for="content">Contenu *</label>
+          <textarea id="content" placeholder="Contenu de l'article" rows="5" required></textarea>
+        </div>
+
+        <!-- Auteur -->
+        <div class="form-group">
+          <label for="author">Auteur *</label>
+          <input type="text" id="author" placeholder="Votre Pseudo" required>
+        </div>
+
+        <!-- Catégorie -->
+        <div class="form-group">
+          <label for="category">Catégorie *</label>
+          <select id="category" required>
+            <option value="">-- Sélectionner --</option>
+            <option value="Tech">Tech</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="Voyage">Voyage</option>
+            <option value="Santé">Santé</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
+
+        <!-- Tag -->
+        <div class="form-group">
+          <label for="tag">Tag</label>
+          <input type="text" id="tag" placeholder="Ex: #basketball">
+        </div>
+
+        <!-- Buttons -->
+        <div class="form-buttons">
+          <button type="submit" class="btn-submit">Publier</button>
+          <button type="button" class="btn-cancel" id="cancelBtn">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js" async defer></script>
+</body>
+</html>
